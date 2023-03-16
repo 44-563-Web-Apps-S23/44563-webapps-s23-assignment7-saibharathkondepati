@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>React page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <h2>Speed check by Sai Bharath Kondepati</h2>
+
+  <div id="target"> Your time </div>
+  <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
+  <div id="counter"> Count </div>
+  <button type="button" class="btn btn-success" onclick="recordTime()"> React</button>
+  
+  <p id="countdown"></p>
+  
+  <script> 
+  var reactTime
+  function recordTime(){
+    reactTime=undefined;
+    reactTime= Date.now();
+    console.log(reactTime);
+  }
+  var i=0;
+  let rv=Math.floor((Math.random() * 10) + 2);
+  function startTime(){
+     rv=Math.floor((Math.random() * 10) + 2);
+    for( i=0;i<rv;i++){
+        console.log(rv);
+        setTimeou(i); 
+    }
+    
+  function startTime(){
+    for( i=0;i<9;i++){
+        setTime(i);  
+    }
+   function setTime(i)
+   {
+        setTimeout(()=>{document.getElementById('countdown').innerHTML=i;},(8-i)*1000);
+    }
+    ( () => {
+        console.log("Entered anononymouse function");
+         if(reactTime==undefined){
+            console.log("entered if is");
+            document.getElementById('target').innerHTML="Too Slow";
+         }
+         else{
+            console.log("entered else other");
+            let endTime;
+            endTime=Date.now();
+            console.log("endtime is given by"+endTime);
+            let temp=endTime-reactTime;
+            console.log(temp);
+            document.getElementById('target').innerHTML="Time was "+temp;
+         }
+        })();
+  }
+  
+  </script>
+
+</body>
+</html>
